@@ -33,9 +33,9 @@ class MesBot(Client):
                 		self.sendImg(img_location, title, thread_id, thread_type)
 #                		link = f"https://hentai2read.com/hentai-list/search/{title}"
 #                		self.sendMsg(link, thread_id, thread_type)
-		else:
-			reply = chat.ChatBot(msg)
-			self.sendMsg(reply, thread_id, thread_type)
+                else:
+                	reply = chat.ChatBot(msg)
+                	self.sendMsg(reply, thread_id, thread_type)
 
     def sendMsg(self, reply, thread_id, thread_type):
         self.send(Message(text=reply), thread_id=thread_id, thread_type=thread_type)
