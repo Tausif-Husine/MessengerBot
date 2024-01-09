@@ -19,9 +19,11 @@ To run this bot, ensure you have the following prerequisites installed:
 **Note:** By using this bot, you acknowledge that you won't hold the creator accountable for any potential consequences, including but not limited to ID bans.
 
 ## Commands
-The bot currently supports two commands:
+The bot currently supports three commands:
 1. **Chatbot:** Send a message to the chatbot by typing the prefix (in this case, `!`) followed by the text you want to communicate.
 
 2. **Hentai:** Trigger the hentai command by typing the prefix followed by `hentai`.
+
+3. **Generate** This command generates an Image using the input you give as the prompt
 
 Don't judge me for the weird commands 🙂
