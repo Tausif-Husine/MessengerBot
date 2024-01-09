@@ -24,6 +24,6 @@ The bot currently supports three commands:
 
 2. **Hentai:** Trigger the hentai command by typing the prefix followed by `hentai`.
 
-3. **Generate** This command generates an Image using the input you give as the prompt
+3. **Generate** This command generates an Image using the input you give as the prompt.
 
 Don't judge me for the weird commands 🙂
