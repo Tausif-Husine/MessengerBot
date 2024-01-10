@@ -1,6 +1,7 @@
 from fbchat import Client
 from fbchat.models import *
 import json
+from pathlib import Path
 #import commands 
 import Cmd.Chatbot as chat
 import Cmd.NTR as h
@@ -24,27 +25,28 @@ class MesBot(Client):
                 pass
 
         if (author_id != self.uid):
-            if "!" in msg:
+            prefix = msg.split()[0]
+            if "!" == prefix:
                 msg = msg.replace("!", "")
                 if "hentai" in msg:
                 	title = h.RandomSeries()
-                	img_location = h.download(title)
+                	img_location = str(h.download(title))
                 	if "Cmd" not in img_location:
-                		self.sendMsg(str(img_location), thread_id, thread_type)
+                		self.sendMsg(img_location, thread_id, thread_type)
                 	else:
                 		self.sendImg(img_location, title, thread_id, thread_type)
 #                		link = f"https://hentai2read.com/hentai-list/search/{title}"
 #                		self.sendMsg(link, thread_id, thread_type)
-                		img_location.unlink()
+                		Path(img_location).unlink()
                 elif "generate" in msg:
                 	prompt = msg.replace("generate", "")
-                	img_location = g.generateImg(prompt)
+                	img_location = str(g.generateImg(prompt))
                 	if 'Cmd' not in img_location:
-                		self.sendMsg(str(img_location), thread_id, thread_type)
+                		self.sendMsg(img_location, thread_id, thread_type)
                 	else:
                 		text = "Image generated successfully"
                 		self.sendImg(img_location, text, thread_id, thread_type)
-                		img_location.unlink()
+                		Path(img_location).unlink()
                 else:
                 	reply = chat.ChatBot(msg)
                 	self.sendMsg(reply, thread_id, thread_type)
